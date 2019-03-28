@@ -1,0 +1,44 @@
+public class Image {
+	   private int width;
+	   private int height;
+	   private Image img;  
+	   Database Database;
+	   Thumbnail thumb;
+	   Cloud clo;
+	   Resize sizer;
+	   WaterMarker logo;
+	   public int getWidth() {
+		     return width;
+		   }
+	   public int getHeight() {
+		     return height;
+		   }
+		}
+
+class Database {
+	  String compte;
+	  void connect(){}
+	  void namebd(Image img){}
+	  public void storebd(Image Img) {}
+	}
+
+class Cloud {
+	  String compte;
+	  void connect(){}
+	  void PImage(Image img){}
+	  public void storeCloud(Image Img) {}
+}
+interface Resize {
+	 void size(Image img,int width,int height);
+}
+
+interface WaterMarker{
+	  void addlogo(Image img,Image logo);
+	}
+
+abstract class Thumbnail implements WaterMarker,Resize{
+	  Image Img;
+	  Image logo;
+	  public void addlogo(Image img,Image logo) {}
+	  void Resize(Image img,int width,int height) {}
+}
